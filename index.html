@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zotakce - Losování správce</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Zotakce 🎉</h1>
+    <p>Zadej své Roblox jméno a zúčastni se losování správce!</p>
+
+    <input type="text" id="username" placeholder="Roblox jméno..." />
+    <button id="addUser">Přihlásit</button>
+
+    <div id="message"></div>
+
+    <h2>Seznam účastníků</h2>
+    <ul id="userList"></ul>
+
+    <button id="drawWinner">🎡 Vytočit výherce!</button>
+    <div id="winner"></div>
+  </div>
+
+  <audio id="soundWin" src="https://assets.mixkit.co/sfx/preview/mixkit-game-level-completed-2059.mp3"></audio>
+  <audio id="soundLose" src="https://assets.mixkit.co/sfx/preview/mixkit-retro-game-notification-212.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
