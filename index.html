@@ -1,30 +1,47 @@
-<!DOCTYPE html>
+<!-- Vytvořil: Martin | Projekt Zotakce | 2025 -->
+<!doctype html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zotakce - Losování správce</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zotakce — Losování správce</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Zotakce 🎉</h1>
-    <p>Zadej své Roblox jméno a zúčastni se losování správce!</p>
+  <div class="background"></div>
 
-    <input type="text" id="username" placeholder="Roblox jméno..." />
-    <button id="addUser">Přihlásit</button>
+  <header>
+    <h1>Zotakce — Losování správce</h1>
+    <button id="adminBtn">Admin</button>
+  </header>
 
-    <div id="message"></div>
+  <main>
+    <div id="wheelContainer">
+      <canvas id="wheel" width="400" height="400"></canvas>
+      <button id="spinBtn" disabled>🎯 Točit</button>
+    </div>
 
-    <h2>Seznam účastníků</h2>
+    <div id="winner" class="hidden"></div>
+  </main>
+
+  <!-- Admin panel -->
+  <div id="adminPanel" class="hidden">
+    <h2>Admin panel</h2>
+    <input type="text" id="newUser" placeholder="Zadej jméno hráče">
+    <button id="addUser">Přidat</button>
     <ul id="userList"></ul>
-
-    <button id="drawWinner">🎡 Vytočit výherce!</button>
-    <div id="winner"></div>
+    <button id="resetBtn">🔁 Resetovat losování</button>
+    <button id="closeAdmin">Zavřít</button>
   </div>
 
-  <audio id="soundWin" src="https://assets.mixkit.co/sfx/preview/mixkit-game-level-completed-2059.mp3"></audio>
-  <audio id="soundLose" src="https://assets.mixkit.co/sfx/preview/mixkit-retro-game-notification-212.mp3"></audio>
+  <!-- Heslo -->
+  <div id="passwordPrompt" class="hidden">
+    <div class="promptBox">
+      <h3>Zadej heslo:</h3>
+      <input type="password" id="adminPassword">
+      <button id="checkPassword">OK</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
