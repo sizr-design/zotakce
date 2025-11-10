@@ -8,40 +8,47 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="background"></div>
-
-  <header>
-    <h1>Zotakce — Losování správce</h1>
-    <button id="adminBtn">Admin</button>
-  </header>
+  <div id="bg">
+    <div class="diagonal-layer"></div>
+  </div>
 
   <main>
-    <div id="wheelContainer">
-      <canvas id="wheel" width="400" height="400"></canvas>
-      <button id="spinBtn" disabled>🎯 Točit</button>
+    <section id="hero">
+      <div class="card">
+        <div class="label">Napište své uživatelské jméno v Robloxu (ne přezdívku)</div>
+        <input id="username" placeholder="např. roblox_player123" autocomplete="off" />
+        <input id="nick" placeholder="Tvoje přezdívka (např. Martin)" autocomplete="off" />
+        <div class="row">
+          <button id="addBtn" class="btn green">Přidat do losování</button>
+          <button id="infoBtn" class="btn">Losování správce</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="infoModal" class="modal hidden">
+      <div class="modalCard">
+        <h2>Losování správce</h2>
+        <p>Losování bude v <strong id="drawTimeText">pondělí v 15:00</strong>.</p>
+        <p>Zapněte si oznámení, aby vám přišla zpráva, že kolo štěstí je připravené!</p>
+        <div class="row">
+          <button id="closeInfo" class="btn">Zavřít</button>
+        </div>
+      </div>
     </div>
 
-    <div id="winner" class="hidden"></div>
+    <section id="wheelSection" class="hidden">
+      <div class="wheelCard">
+        <canvas id="wheelCanvas" width="600" height="600"></canvas>
+        <div id="wheelCenter">
+          <button id="spinBtn" class="btn green big">🎯 ROZTOČIT!</button>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Admin panel -->
-  <div id="adminPanel" class="hidden">
-    <h2>Admin panel</h2>
-    <input type="text" id="newUser" placeholder="Zadej jméno hráče">
-    <button id="addUser">Přidat</button>
-    <ul id="userList"></ul>
-    <button id="resetBtn">🔁 Resetovat losování</button>
-    <button id="closeAdmin">Zavřít</button>
-  </div>
-
-  <!-- Heslo -->
-  <div id="passwordPrompt" class="hidden">
-    <div class="promptBox">
-      <h3>Zadej heslo:</h3>
-      <input type="password" id="adminPassword">
-      <button id="checkPassword">OK</button>
-    </div>
-  </div>
+  <div id="overlay" class="overlay hidden"></div>
+  <audio id="winAudio" src="win.mp3"></audio>
+  <audio id="errAudio" src="error.mp3"></audio>
 
   <script src="script.js"></script>
 </body>
