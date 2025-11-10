@@ -1,0 +1,38 @@
+<!-- Vytvořil: Martin | Projekt Zotakce | 2025 -->
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zotakce — Admin panel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="bg">
+    <div class="diagonal-layer"></div>
+  </div>
+
+  <main>
+    <section id="admin">
+      <div class="adminCard">
+        <h2>Admin panel — Zotakce</h2>
+        <div class="row wrap" id="adminControls">
+          <button id="lockBtn" class="btn">Zamknout přihlašování</button>
+          <button id="resetBtn" class="btn">Resetovat losování</button>
+          <button id="forceSpin" class="btn green">Spustit losování (ručně)</button>
+          <input id="drawTime" type="datetime-local" />
+          <button id="setTime" class="btn">Nastavit čas</button>
+        </div>
+        <h3>Seznam přihlášených</h3>
+        <div id="playersList"></div>
+      </div>
+    </section>
+  </main>
+
+  <audio id="winAudio" src="win.mp3"></audio>
+  <audio id="errAudio" src="error.mp3"></audio>
+  <div id="overlay" class="overlay hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
